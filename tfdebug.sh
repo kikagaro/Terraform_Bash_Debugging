@@ -64,8 +64,6 @@ function tfdebug()
 
 # Check if script is sourced or directly executed:
 # If sourced, setup Bash Completion
-if $(return >/dev/null 2>$1); then
-  complete -W tfdebug
-else # If ran directly, pass arguments to function
-  tfdebug "${@}"
-fi
+if $(return >/dev/null 2>&1); then
+  complete -W "help off ERROR WARN INFO DEBUG TRACE" tfdebug
+else tfdebug "${@}"; fi # If ran directly, pass arguments to function

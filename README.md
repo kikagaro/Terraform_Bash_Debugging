@@ -9,7 +9,6 @@ Over engineered script to enable or disable Terraform Debugging on Bash.
 Add to your .bashrc to source.
 ```
 TFDEBUG_FILE="/PATH/TO/tfdebug.sh"
-if [[ -f "${TFDEBUG_FILE}" ]]; then # If the script exist
-  . "${TFDEBUG_FILE}"
-fi
+if [ -f "${TFDEBUG_FILE}" ]; then # If the script exist
+  . "${TFDEBUG_FILE}"; fi
 ```
